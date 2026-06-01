@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário Completo - ADS Turma 01</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+    <header>
+        <h1> Cadastro</h1>
+    </header>
+
+    <main>
+
+        <section>
+            <form id="formCadastro">
+
+                <fieldset>
+                    <legend> Dados Pessoais</legend>
+
+                    <div class="form-group">
+                        <label for="nome">Nome completo:</label>
+                        <input type="text" id="nome" name="nome" required minlength="3" placeholder="Digite seu nome completo">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">E-mail:</label>
+                        <input type="email" id="email" name="email" required placeholder="exemplo@email.com">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="dataNascimento">Data de nascimento:</label>
+                        <input type="date" id="dataNascimento" name="dataNascimento" required>
+                    </div>
+
+                </fieldset>
+
+                <fieldset>
+                    <legend> Informações</legend>
+
+                    <div class="form-group">
+                        <label>Gênero:</label>
+                        <div class="radio-group">
+                            <label class="radio-label">
+                                <input type="radio" name="genero" value="Masculino"> Masculino
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="genero" value="Feminino"> Feminino
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="genero" value="Outro"> Outro
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Interesses:</label>
+                        <div class="checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="interesses" value="Tecnologia"> Tecnologia
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="interesses" value="Esportes"> Esportes
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="interesses" value="Música"> Música
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="interesses" value="Jogos"> Jogos
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="estado">Estado:</label>
+                        <select id="estado" name="estado">
+                            <option value="">Selecione um estado</option>
+                            <option value="AC">Acre</option>
+                            <option value="AL">Alagoas</option>
+                            <option value="AP">Amapá</option>
+                            <option value="AM">Amazonas</option>
+                            <option value="BA">Bahia</option>
+                            <option value="CE">Ceará</option>
+                            <option value="DF">Distrito Federal</option>
+                            <option value="ES">Espírito Santo</option>
+                            <option value="GO">Goiás</option>
+                            <option value="MA">Maranhão</option>
+                            <option value="MT">Mato Grosso</option>
+                            <option value="MS">Mato Grosso do Sul</option>
+                            <option value="MG">Minas Gerais</option>
+                            <option value="PA">Pará</option>
+                            <option value="PB">Paraíba</option>
+                            <option value="PR">Paraná</option>
+                            <option value="PE">Pernambuco</option>
+                            <option value="PI">Piauí</option>
+                            <option value="RJ">Rio de Janeiro</option>
+                            <option value="RN">Rio Grande do Norte</option>
+                            <option value="RS">Rio Grande do Sul</option>
+                            <option value="RO">Rondônia</option>
+                            <option value="RR">Roraima</option>
+                            <option value="SC">Santa Catarina</option>
+                            <option value="SP">São Paulo</option>
+                            <option value="SE">Sergipe</option>
+                            <option value="TO">Tocantins</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="mensagem">Mensagem:</label>
+                        <textarea id="mensagem" name="mensagem" rows="4" placeholder="Digite sua mensagem aqui..."></textarea>
+                    </div>
+
+                </fieldset>
+
+                <fieldset>
+                    <legend> Anexos</legend>
+
+                    <div class="form-group">
+                        <label>Upload de imagem:</label>
+                        <div class="upload-area">
+                            <input type="file" id="upload" name="upload" accept="image/*">
+                            <label for="upload" class="upload-label"> Escolher arquivo</label>
+                            <div class="file-name" id="fileName">Nenhum arquivo escolhido</div>
+                        </div>
+                    </div>
+
+                </fieldset>
+
+                <div class="button-group">
+                    <button type="submit" id="enviar"> Enviar</button>
+                    <button type="button" id="limpar"> Limpar</button>
+                </div>
+
+            </form>
+        </section>
+
+        <section>
+            <h2 id="sec-resultado"> Resultado</h2>
+            <div id="resultado"></div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 - Formulário Turma 01 ADS</p>
+        <nav aria-label="Documentações">
+            <a href="https://developer.mozilla.org/pt-BR/docs/Web/HTML" target="_blank">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"
+                    alt="Documentação HTML" width="40">
+            </a>
+            <a href="https://developer.mozilla.org/pt-BR/docs/Web/CSS" target="_blank">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg"
+                    alt="Documentação CSS" width="40">
+            </a>
+            <a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript" target="_blank">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
+                    alt="Documentação JavaScript" width="40">
+            </a>
+        </nav>
+    </footer>
+
+</body>
+
+</html>
