@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MousePad Store</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="#" onclick="showPage('home')">MousePad Store</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="nav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#" onclick="showPage('home')">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#" onclick="showPage('sobre')">Sobre</a></li>
+          <li class="nav-item"><a class="nav-link" href="#" onclick="showPage('contato')">Contato</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HOME -->
+  <div id="page-home">
+    <div class="bg-light py-5 text-center">
+      <div class="container">
+        <h1>Mousepads para todos os estilos</h1>
+        <p class="lead">Do gamer ao escritório, temos o mousepad certo pra você.</p>
+        <a href="#produtos" class="btn btn-dark">Ver Produtos</a>
+      </div>
+    </div>
+
+    <div class="container py-5" id="produtos">
+      <h2 class="mb-4">Produtos</h2>
+      <div class="row g-4">
+
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title">Mousepad Gamer XL</h5>
+              <p class="card-text">900x400mm, superfície de tecido de alta precisão, base antiderrapante de borracha.</p>
+              <p class="fw-bold">R$ 89,90</p>
+              <button class="btn btn-dark btn-sm" onclick="showProduct(1)">Ver Produto</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title">Mousepad Speed Pro</h5>
+              <p class="card-text">350x280mm, superfície dura para máxima velocidade, bordas costuradas reforçadas.</p>
+              <p class="fw-bold">R$ 59,90</p>
+              <button class="btn btn-dark btn-sm" onclick="showProduct(2)">Ver Produto</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title">Mousepad RGB Desk</h5>
+              <p class="card-text">800x300mm com iluminação RGB lateral, cabo USB integrado e 14 modos de luz.</p>
+              <p class="fw-bold">R$ 129,90</p>
+              <button class="btn btn-dark btn-sm" onclick="showProduct(3)">Ver Produto</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- SOBRE -->
+  <div id="page-sobre" class="d-none">
+    <div class="container py-5">
+      <h2 class="mb-3">Sobre</h2>
+      <p>Somos especializados em mousepads para gamers, profissionais e uso no escritório.</p>
+      <p>Trabalhamos com materiais de qualidade e entrega rápida para todo o Brasil.</p>
+      <button class="btn btn-dark mt-2" onclick="showPage('contato')">Fale Conosco</button>
+    </div>
+  </div>
+
+  <!-- CONTATO -->
+  <div id="page-contato" class="d-none">
+    <div class="container py-5">
+      <h2 class="mb-4">Contato</h2>
+      <div class="row">
+        <div class="col-md-6">
+          <form id="form">
+            <div class="mb-3">
+              <label class="form-label">Nome</label>
+              <input type="text" class="form-control" placeholder="Seu nome" required/>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">E-mail</label>
+              <input type="email" class="form-control" placeholder="seu@email.com" required/>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Mensagem</label>
+              <textarea class="form-control" rows="5" placeholder="Escreva sua mensagem..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-dark">Enviar</button>
+          </form>
+          <div class="alert alert-success mt-3 d-none" id="ok">Mensagem enviada!</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PRODUTO -->
+  <div id="page-produto" class="d-none">
+    <div class="container py-5">
+      <a href="#" class="text-muted small" onclick="showPage('home')">← Voltar</a>
+      <h2 class="mt-3" id="prod-nome"></h2>
+      <p class="lead" id="prod-desc"></p>
+      <ul id="prod-specs"></ul>
+      <p class="fs-5 fw-bold" id="prod-preco"></p>
+      <button class="btn btn-dark" onclick="alert('Adicionado ao carrinho!')">Comprar</button>
+    </div>
+  </div>
+
+  <footer class="bg-dark text-white text-center py-3 mt-4">
+    <small>© 2025 MousePad Store</small>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    const pages = ['home','sobre','contato','produto'];
+
+    function showPage(name) {
+      pages.forEach(p => document.getElementById('page-' + p).classList.add('d-none'));
+      document.getElementById('page-' + name).classList.remove('d-none');
+      window.scrollTo(0, 0);
+    }
+
+    const produtos = {
+      1: {
+        nome: 'Mousepad Gamer XL',
+        desc: '900x400mm, superfície de tecido de alta precisão, base antiderrapante de borracha.',
+        specs: ['Tamanho: 900 x 400 x 3mm', 'Material: tecido micro-texturizado', 'Base: borracha natural antiderrapante', 'Bordas costuradas'],
+        preco: 'R$ 89,90'
+      },
+      2: {
+        nome: 'Mousepad Speed Pro',
+        desc: '350x280mm, superfície dura para máxima velocidade, bordas costuradas reforçadas.',
+        specs: ['Tamanho: 350 x 280 x 4mm', 'Material: superfície dura de polímero', 'Base: borracha antiderrapante', 'Ideal para movimentos rápidos'],
+        preco: 'R$ 59,90'
+      },
+      3: {
+        nome: 'Mousepad RGB Desk',
+        desc: '800x300mm com iluminação RGB lateral, cabo USB integrado e 14 modos de luz.',
+        specs: ['Tamanho: 800 x 300 x 4mm', 'Iluminação RGB com 14 modos', 'Cabo USB 1.8m emborrachado', 'Superfície de tecido macio'],
+        preco: 'R$ 129,90'
+      }
+    };
+
+    function showProduct(id) {
+      const p = produtos[id];
+      document.getElementById('prod-nome').textContent = p.nome;
+      document.getElementById('prod-desc').textContent = p.desc;
+      document.getElementById('prod-preco').textContent = p.preco;
+      const ul = document.getElementById('prod-specs');
+      ul.innerHTML = p.specs.map(s => `<li>${s}</li>`).join('');
+      showPage('produto');
+    }
+
+    document.getElementById('form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      document.getElementById('ok').classList.remove('d-none');
+      this.reset();
+    });
+  </script>
+</body>
+</html>
