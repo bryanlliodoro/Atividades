@@ -1,0 +1,297 @@
+/* Definicao de variaveis em escopo global */
+:root {
+    --altura-header: 20vh;
+    --altura-article: 30vh;
+}
+
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #eee;
+    font-family: Georgia, serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* =====================
+   HEADER
+   ===================== */
+header {
+    width: 100%;
+    height: var(--altura-header);
+    background: linear-gradient(90deg, #e9e7d8, #e9e7d8 60%, orange);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+/* Logo */
+#logo {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    gap: 10px;
+}
+
+#logo h1 {
+    font-style: italic;
+    font-size: 1.4rem;
+    color: #333;
+}
+
+#logo-img {
+    height: 70px;
+    width: auto;
+    border-radius: 6px;
+    transition: transform 1s ease;
+}
+
+#logo-img:hover {
+    transform: rotate(360deg);
+}
+
+/* Nav */
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+    font-size: 0.9rem;
+    display: inline-block;
+    transition: transform 0.5s ease;
+}
+
+nav a:hover {
+    transform: scale(1.5);
+}
+
+/* =====================
+   MAIN
+   ===================== */
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    width: 100%;
+    flex: 1;
+}
+
+/* Header-main (hero) */
+#header-main {
+    text-align: center;
+    padding: 30px 20px 20px;
+    width: 100%;
+}
+
+#header-main h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+#header-main p {
+    font-style: italic;
+    color: #555;
+    font-size: 0.95rem;
+}
+
+/* =====================
+   SEÇÕES
+   ===================== */
+section {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 15px 0;
+    width: 60%;
+    min-width: 320px;
+}
+
+/* Próximos Eventos */
+#proximos-eventos {
+    text-align: center;
+}
+
+#proximos-eventos h3 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: orange;
+    font-style: italic;
+}
+
+#proximos-eventos > p {
+    font-size: 0.85rem;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+/* Eventos */
+.evento {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    margin: 10px 0;
+    text-align: left;
+    background-color: #fff;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.evento:hover {
+    background-color: orange;
+    color: #fff;
+    transform: translateY(-5px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.evento img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 6px;
+    flex-shrink: 0;
+}
+
+.dados-evento h4 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 4px;
+}
+
+.dados-evento .data,
+.dados-evento .local {
+    font-size: 0.8rem;
+    color: #666;
+}
+
+.evento:hover .data,
+.evento:hover .local {
+    color: #000;
+}
+
+/* =====================
+   PÁGINAS DE CONTATO E CADASTRO
+   ===================== */
+
+/* Informações de contato */
+section h2 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: orange;
+    font-style: italic;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+section p {
+    font-size: 0.9rem;
+    margin-bottom: 6px;
+    text-align: center;
+}
+
+/* =====================
+   FORMULÁRIOS
+   ===================== */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+form div {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+label {
+    font-size: 0.85rem;
+    color: #444;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="tel"],
+input[type="date"],
+textarea {
+    border: 1px solid #bbb;
+    border-radius: 4px;
+    padding: 6px 8px;
+    font-size: 0.9rem;
+    width: 200px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="tel"]:focus,
+input[type="date"]:focus,
+textarea:focus {
+    outline: none;
+    border-color: orange;
+    box-shadow: 0 0 5px rgba(255, 165, 0, 0.5);
+}
+
+textarea {
+    width: 200px;
+    resize: vertical;
+}
+
+/* Checkbox */
+input[type="checkbox"] {
+    margin-right: 6px;
+}
+
+/* Botões */
+button {
+    padding: 10px;
+    border: none;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    cursor: pointer;
+    background-color: #333;
+    color: #fff;
+    width: 200px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: yellowgreen;
+    transform: scale(1.01);
+}
+
+button[type="reset"]:hover {
+    background-color: orange;
+    transform: scale(1.01);
+}
+
+/* =====================
+   FOOTER
+   ===================== */
+footer {
+    width: 100%;
+    background-color: #333;
+    color: #ccc;
+    text-align: center;
+    padding: 15px;
+    font-size: 0.8rem;
+    margin-top: 20px;
+}
